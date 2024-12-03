@@ -1,0 +1,26 @@
+WebApp UI
+	Display companies and their prices on graph
+	Display prediction about the company stock price for next month
+Controller
+	Central controller for getting all requests
+	Dispatching the request to appropriate controller
+Login Controller
+	Processing requests for logging
+Register Controller
+	Processing requests for registering
+Search Controller
+	Processing requests for companies
+Register Service
+	Business logic for registering
+Login Service
+	Business logic for logging
+Search Service
+	Bussiness logic for companies
+LSTM Service
+	Predicts company stock price for next month
+User Repository
+	Store data in database for users
+Company Repository
+	Retrive/update data from/to database for companies
+Historical Data Repository
+	Retrieve/update data from/to database for historical data for companies

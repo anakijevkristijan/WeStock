@@ -1,0 +1,20 @@
+Register Controller - Register Service - User Repository
+	При регистрирање на корисник, Register Controller ќе го прими барањето од MVC Controller и ќе го препрати на 
+	Register Service. Во овој сервис, ќе се проверува валидноста на информациите и ќе се зачуваат информациите во
+	база. User Repository ќе го врши зачувувањето на податоците во базата.
+Login Controller - Login Service - User Repository
+	При најава на корисник, Login Controller ќе го прими барањето од MVC Controller и ќе го препрати на 
+	Login Service. Во овој сервис, ќе се направи автентикација и авторизација на корисникот, при што
+	User Repository ќе се користи за да се добијат информациите од базата. Сето ова ќе е овозможено со помош на
+	Spring Security
+Search Controller - Search Service - LSTM Service -  Company/Historical Data Repository
+	При пребарување на компании, Search Controller ќе го прими барањето од MVC Controller
+	и ќе го препрати на Searh Service. Во овој сервис, ќе е главната бизнис логика за апликацијата. Ќе се врши
+	селектирање на компанијата и историските податоци за истата.Повлекувањето на податоци ќе се
+	изврши со помош на Company и Historical Data Repository. Потоа се праќа барање до LSTM Service кој прави предвидување 
+	на цената на акцијата за наредниот месец за селектираната компанија.
+
+Технологии кои што се користат:
+	Frontend - Bootstrap,Thymeleaf
+	Backend - Spring Boot and Python
+	Database - Postgres
