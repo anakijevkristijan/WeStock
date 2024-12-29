@@ -1,0 +1,159 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stock Market Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .hero {
+      background: linear-gradient(135deg, #1d1b49, #4b79a1);
+      color: #FFFFFF;
+      padding: 150px 0;
+      text-align: center;
+    }
+    .hero h1 {
+      font-weight: 600;
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+    .hero-button {
+      padding: 10px 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      background: linear-gradient(135deg, #0739ff, #06085b);
+      color: #FFFFFF;
+      cursor: pointer;
+      transition: background 0.3s ease-in-out;
+    }
+    .hero-button:hover {
+      background: linear-gradient(135deg, #062086, #010113);
+    }
+    .info-section {
+      padding: 50px 0;
+    }
+    .info-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .card img {
+      width: 100%;
+      height: 200px; /* Set a fixed height for consistency */
+      object-fit: cover; /* Ensures the image fits the container */
+    }
+    .graphs-section {
+      padding: 50px 0;
+    }
+    .graphs-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+    .graphs-section img {
+      width: 100%; /* Full width within the container */
+      height: 300px; /* Consistent height for all images */
+      object-fit: cover; /* Maintain aspect ratio */
+    }
+    .footer {
+      background: linear-gradient(135deg, #1d1b49, #4b79a1);
+      color: #FFFFFF;
+      padding: 20px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div th:insert="/layout/layout :: navbar"></div>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <h1>Welcome to StockWise</h1>
+    <p>Your Gateway to Smarter Stock Investments</p>
+    <p>Stay informed and make smarter investment decisions with real-time data and insights.</p>
+    <a href="/companies" class="hero-button">Explore Stocks</a>
+  </div>
+</section>
+
+<!-- Stock Highlights Section -->
+<section class="info-section">
+  <div class="container">
+    <h2>Today's Highlights</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=400&fit=crop" alt="Tech Giants" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Tech Giants</h5>
+            <p class="card-text">Apple, Google, and Amazon lead the market today with a 5% rise in their stock prices.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1669951584070-468c7a64634c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3RvY2tzfGVufDB8fDB8fHww" alt="Top Gainers" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Top Gainers</h5>
+            <p class="card-text">Energy sector stocks see massive gains as crude oil prices stabilize globally.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://plus.unsplash.com/premium_photo-1663931932687-c4c2366a5c61?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3RvY2tzfGVufDB8fDB8fHww" alt="Market Trends" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Market Trends</h5>
+            <p class="card-text">Discover emerging trends in the stock market with our expert insights.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Graphs Section -->
+<section class="graphs-section">
+  <div class="container">
+    <h2>Market Analysis</h2>
+    <div class="row text-center">
+      <div class="col-md-6">
+        <img src="https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc" alt="Graph 1" class="img-fluid">
+        <p>Daily Performance of the S&P 500</p>
+      </div>
+      <div class="col-md-6">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=400&fit=crop" alt="Graph 2" class="img-fluid">
+        <p>Top 5 Gainers and Losers</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<section class="footer">
+  <div class="container">
+    <p>&copy; 2024 WeStock. All rights reserved.</p>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
